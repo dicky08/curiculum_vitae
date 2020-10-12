@@ -1,0 +1,595 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+
+}
+
+nav {
+    width: 100%;
+    background-color: rgb(50, 50, 58);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 50px;
+    color: rgb(245, 235, 245);
+    position: fixed;
+    z-index: 3;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav .logo {
+    font-family: 'Pacifico', cursive;
+    letter-spacing: 3px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-between;
+}
+
+nav ul li a {
+    color: rgb(245, 235, 245);
+    font-size: 1em;
+}
+
+nav ul li a:after {
+    content: '';
+    display: block;
+    border-bottom: 2px solid rgb(187, 187, 190);
+    width: 50%;
+    margin: auto;
+    padding-bottom: 2px;
+    transform: scaleX(0);
+    transition: transform .3s ease-out;
+}
+
+nav ul li a:hover {
+    color: rgb(204, 212, 219);
+
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+    display: none;
+}
+
+.menu input {
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left: -5.5px;
+    top: -5px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu span {
+    width: 28px;
+    height: 3px;
+    display: block;
+    border-radius: 3px;
+    background-color: rgb(236, 230, 236);
+    transition: .5s;
+}
+
+.menu span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.menu span:nth-child(4) {
+    transform-origin: 0 0;
+}
+
+.menu input:checked~span:nth-child(2) {
+    transform: rotate(45deg) translate(1px, -4px);
+}
+
+.menu input:checked~span:nth-child(4) {
+    transform: rotate(-45deg);
+}
+
+.menu input:checked~span:nth-child(3) {
+    opacity: 0;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+}
+
+.img {
+    height: 500px;
+    background-image: url(img/bgdark.png);
+    background-position: 0 500px;
+    background-size: cover;
+    opacity: .9;
+
+}
+
+.img img {
+    width: 170px;
+    height: 190px;
+    border-radius: 50%;
+    margin-top: 140px;
+    opacity: .8;
+}
+
+.img img:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+header h1 {
+    font-size: 30px;
+    letter-spacing: 5px;
+    padding-top: 30px;
+    text-shadow: 2px 2px 10px rgb(9, 9, 78);
+    color: white;
+}
+
+header h4 {
+    margin-top: 10px;
+    font-size: 20px;
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 10px rgb(9, 9, 78);
+    color: white;
+}
+
+/* KAWAL KORONA */
+#korona,
+#korona-indonesia {
+    padding-top: 50px;
+    text-align: center;
+}
+
+#korona-indonesia h1 {
+    text-align: center;
+    margin-top: 80px;
+}
+
+#korona h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+.container-korona {
+    width: 1200px;
+    margin: 50px auto;
+
+}
+
+.card-korona-indRawat {
+    width: 200px;
+    height: 250px;
+    margin: 20px;
+    box-shadow: 1px 1px 15px rgb(112, 108, 145);
+    opacity: .9;
+    background-color: rgb(231, 243, 124);
+}
+
+.card-korona-sembuh,
+.card-korona-indSembuh {
+    width: 200px;
+    height: 250px;
+    margin: 20px;
+    box-shadow: 1px 1px 15px rgb(112, 108, 145);
+    opacity: .9;
+    background-color: rgb(124, 243, 124);
+}
+
+.card-korona-sembuh p,
+.card-korona-indSembuh p,
+.card-korona-indRawat p {
+    font-size: 50px;
+    text-align: center;
+    line-height: 150px;
+}
+
+.jumlah {
+    text-align: center;
+    margin-top: -20px;
+}
+
+.jumlah span {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.jumlah .angka {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.jumlah .total {
+    font-weight: bold;
+}
+
+.card-korona-sembuh:hover,
+.card-korona-indSembuh:hover,
+.card-korona-indRawat:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.card-korona-positif,
+.card-korona-indPositif {
+    width: 200px;
+    height: 250px;
+    margin: 20px;
+    box-shadow: 1px 1px 15px rgb(112, 108, 145);
+    opacity: .9;
+    background-color: rgb(240, 166, 97);
+}
+
+.card-korona-positif p,
+.card-korona-indPositif p,
+.card-korona-indRawat p {
+    font-size: 50px;
+    text-align: center;
+    line-height: 150px;
+}
+
+.card-korona-positif:hover,
+.card-korona-indPositif:hover,
+.card-korona-indRawat:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.card-korona-meninggal,
+.card-korona-indMeninggal {
+    width: 200px;
+    height: 250px;
+    margin: 20px;
+    box-shadow: 1px 1px 15px rgb(112, 108, 145);
+    opacity: .9;
+    background-color: rgb(241, 94, 94);
+}
+
+.card-korona-meninggal:hover,
+.card-korona-indMeninggal:hover,
+.card-korona-indRawat:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.card-korona-meninggal p,
+.card-korona-indMeninggal p {
+    font-size: 50px;
+    text-align: center;
+    line-height: 150px;
+}
+
+
+/* ABOUT */
+#about {
+    background-color: whitesmoke;
+    border-top: 1px solid rgb(226, 216, 216);
+    margin-top: 50px;
+}
+
+#about h1 {
+    text-align: center;
+    padding-top: 80px;
+}
+
+.card-about {
+    width: 800px;
+    margin: 20px auto;
+}
+
+.card-about.about {
+    max-width: 250px;
+    height: 250px;
+    background-image: url(img/as.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -95px 0;
+    border-radius: 8px;
+    opacity: .8;
+
+}
+
+.card-about.about:hover {
+    transition: all .8s;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.about-us p {
+    text-indent: 35px;
+    margin-left: 10px;
+    letter-spacing: 1px;
+}
+
+#education-experience {
+    text-align: center;
+    padding-top: 80px;
+}
+
+.container-education-experience {
+    width: 800px;
+    margin: 50px auto;
+}
+
+.card-education {
+    text-transform: capitalize;
+}
+
+.card-education,
+.card-experience {
+    margin: 15px;
+}
+
+.header-education,
+.header-experience {
+    height: 40px;
+    background-color: rgb(216, 232, 245);
+    text-transform: capitalize;
+    text-align: center;
+    line-height: 40px;
+    font-weight: bold;
+    font-family: 'Pacifico';
+    letter-spacing: 3px;
+}
+
+.content-education,
+.content-experience {
+    padding-top: 15px;
+}
+
+.content-education p,
+.content-experience p {
+    text-align: left;
+    padding-top: 5px;
+    margin-left: 10px;
+}
+
+.content-education p:last-child,
+.content-experience p:last-child {
+    padding-bottom: 20px;
+}
+
+#skill {
+    background-color: whitesmoke;
+    border-top: 1px solid rgb(226, 216, 216);
+    margin-bottom: 30px;
+    padding-top: 80px;
+}
+
+#skill h1 {
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+.container-skill {
+    width: 900px;
+    margin: 10px auto;
+}
+
+.card-skill {
+    width: 500px;
+    margin: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 1px 1px 5px slategray;
+}
+
+.card-skill.html,
+.card-skill.css,
+.card-skill.js,
+.card-skill.ci {
+    height: 200px;
+}
+
+.content-skill.html {
+    height: 190px;
+    background-color: rgb(243, 133, 55);
+}
+
+.header-skill.html {
+    height: 80px;
+    line-height: 201px;
+}
+
+.card-skill.html p,
+.card-skill.css p,
+.card-skill.js p,
+.card-skill.ci p {
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Comic Neue', cursive;
+    letter-spacing: 1px;
+}
+
+.content-skill.css {
+    height: 190px;
+    background-color: cornflowerblue;
+}
+
+.header-skill.css {
+    height: 90px;
+    line-height: 201px;
+}
+
+.content-skill.js {
+    height: 160px;
+    background-color: rgb(236, 236, 47);
+}
+
+.header-skill.js {
+    height: 110px;
+    line-height: 201px;
+}
+
+
+.content-skill.ci {
+    height: 160px;
+    background-color: rgb(235, 84, 84);
+}
+
+.header-skill.ci {
+    height: 90px;
+    line-height: 201px;
+}
+
+
+
+#testimonial {
+    padding-top: 80px;
+}
+
+#testimonial h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.container-testi {
+    width: 1200px;
+    margin: 50px auto;
+
+}
+
+.card-testimoni {
+    width: 200px;
+    height: 250px;
+    background-color: tan;
+    margin: 20px;
+    box-shadow: 1px 1px 15px rgb(112, 108, 145);
+    opacity: .9;
+}
+
+.card-testimoni:hover {
+    cursor: pointer;
+    transition: all .3s;
+    transform: scale(1.5);
+    opacity: 1;
+}
+
+.img-testimoni-login {
+    height: 150px;
+    background-image: url(img/port1/login.jpg);
+    background-size: cover;
+    background-color: teal;
+}
+
+.img-testimoni-dash {
+    height: 150px;
+    background-image: url(img/port1/dashboard.jpg);
+    background-size: cover;
+    background-color: teal;
+}
+
+.img-testimoni-cart {
+    height: 150px;
+    background-image: url(img/port1/cart.jpg);
+    background-size: cover;
+    background-color: teal;
+}
+
+.img-testimoni-pay {
+    height: 150px;
+    background-image: url(img/port1/pay.jpg);
+    background-size: cover;
+    background-color: teal;
+}
+
+.img-testimoni-dattr {
+    height: 150px;
+    background-image: url(img/port1/dattr.jpg);
+    background-size: cover;
+    background-color: teal;
+}
+
+
+.img-testimoni {
+    height: 150px;
+    background-image: url(img/port1/1.jpg);
+    background-size: cover;
+    background-color: teal;
+}
+
+.img-testimoni2 {
+    height: 150px;
+    background-image: url(img/port1/2.jpg);
+    background-size: cover;
+    background-color: teal;
+
+}
+
+.img-testimoni3 {
+    height: 150px;
+    background-image: url(img/port1/3.jpg);
+    background-size: cover;
+    background-color: teal;
+
+}
+
+.img-testimoni4 {
+    height: 150px;
+    background-image: url(img/port1/4.jpg);
+    background-size: cover;
+    background-color: teal;
+
+}
+
+.img-testimoni5 {
+    height: 150px;
+    background-image: url(img/port1/5.jpg);
+    background-size: cover;
+    background-color: teal;
+
+}
+
+.content-testi {
+    text-align: left;
+    padding: 10px 5px;
+    font-size: 12px;
+}
+
+#footer {
+    padding-top: 180px;
+
+}
+
+.footer {
+    height: 60px;
+    background-color: rgb(50, 50, 58);
+    color: white;
+    text-align: center;
+    line-height: 60px;
+}
